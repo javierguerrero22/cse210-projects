@@ -30,7 +30,7 @@ class Program
             }
             else if (choice == "2"){
                 journal.DisplayAll();
-                // entry._promptText =             
+                           
             }
             else if (choice == "3"){
                 Console.Write("Which file do you want to load to?: ");
