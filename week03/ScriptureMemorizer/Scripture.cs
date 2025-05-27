@@ -2,27 +2,69 @@ using System;
 class Scripture
 {
     private List<Word> _words;
-    private bool _isSingle = true;
-    private Random _random;
+    private Reference _reference;
 
-    public Scripture()
+    public Scripture(Reference reference, string text)
     {
-        _words = new List<Word>();
-        _random = new Random();
+        _reference = reference;
+
+        string[] words = text.Split(' ');
+
+        List<Word> wordList = new List<Word>();
+
+        foreach (string word in words)
+        {
+            Word newWord = new Word(word);
+            wordList.Add(newWord);
+        }
+        _words = wordList;
     }
 
-    public void StoreScriptureWords()
+    public void HideRandomWords(int numberToHide)
     {
-        
+        Random random = new Random();
+
+        int totalWords = _words.Count;
+        numberToHide = Math.Min(numberToHide, totalWords);
+
+        List<int> hiddenIndex = new List<int>();
+        while (hiddenIndex.Count < numberToHide)
+        {
+            int aleatoryIndex = random.Next(totalWords);
+
+            if (!hiddenIndex.Contains(aleatoryIndex))
+            {
+                hiddenIndex.Add(aleatoryIndex);
+            }
+        }
+        foreach (int index in hiddenIndex)
+        {
+            _words[index].Hide();
+        }
     }
 
-    public void MultiverseScripture()
+    public string GetDisplayText()
     {
-        
+        string reference = _reference.GetDisplayText();
+        List<string> visibleWords = new List<string>();
+        foreach (Word word in _words)
+        {
+            visibleWords.Add(word.DisplayText());
+        }
+        string result = string.Join(" ", visibleWords);
+        return reference +" "+ result;
     }
 
-    public void HideRandomWords()
+    public bool IsCompletelyHidden()
     {
-        
+        foreach (Word word in _words)
+        {
+            if (!word.GetIsHidden())
+            {
+                return false;
+            }
+        }
+        return true;        
     }
+
 }
