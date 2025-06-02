@@ -5,13 +5,11 @@ class Program
     static void Main(string[] args)
     {
         List<Video> videos = new List<Video>();
-        // Console.WriteLine("Hello World! This is the YouTubeVideos Project.");
+        
         Video video1 = new Video("C# Tutorial", "Javier Guerrero", 650);
         video1.AddComment(new Comment("Alice", "Great tutorial!"));
-        
 
         Video video2 = new Video("Py Tutorial", "Alejandro Jiménez", 425);
-        
 
         Video video3 = new Video("Js Tutorial", "Javier Jiménez", 850);
         video3.AddComment(new Comment("Sammy", "This video is what I was looking for!"));

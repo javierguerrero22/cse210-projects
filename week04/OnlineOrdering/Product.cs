@@ -12,10 +12,12 @@ class Product
         _price = price;
         _quantity = quantity;
     }
+
     public double GetTotalCost()
     {
         return _price * _quantity;
     }
+    
     public string GetProductInfo()
     {
         return $"{_name} ({_productID})";

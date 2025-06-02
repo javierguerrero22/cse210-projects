@@ -10,14 +10,17 @@ class Customer
         _name = name;
         _address = address;
     }
+
     public bool IsFromUSA()
     {
         return _address.IsInUSA();
     }
+
     public string GetName()
     {
         return _name;
     }
+    
     public string GetAddress()
     {
         return _address.GetFullAddress();
