@@ -1,4 +1,7 @@
-//Duration message in line 46-47
+// This program enhances the Mindfulness Project by adding personalized encouragement
+// based on the user's selected duration (see Activity.StartMessage() lines 49-50).
+// Longer mindfulness sessions receive extra motivation to keep going!
+//This is ideal and motivating for them to continue using this program and keep working hard and moving forward.
 class Activity
 {
     protected string _name;
