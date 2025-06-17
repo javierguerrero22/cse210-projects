@@ -1,0 +1,5 @@
+2000
+SimpleGoal,eat,eat 1000 hotdogs,2000,True
+EternalGoal,love my girlfriend,love her forever and ever,1000,NeverComplete
+ChecklistGoal,take photos,take 3 photos,400,0,3,100
+NegativeGoal,Be mad with my family,Be mad for all or nothing with my family,300
